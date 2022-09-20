@@ -4,9 +4,9 @@ import './styles.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar main-nav">
+    <nav className="navbar  main-nav">
       <Link to="/" className="nav-logo-text">
-        <h4>Github API</h4>
+        <h4>MovieFlix</h4>
       </Link>
     </nav>
   );

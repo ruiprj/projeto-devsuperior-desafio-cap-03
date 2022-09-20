@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
+import Login from './Login';
 
 import './styles.css';
 
@@ -6,15 +7,22 @@ const Home = () => {
     return (
         <div className="home-container">
             <div className="info-container">
-                <h1>Desafio Github API</h1>
+                <h1>Avalie Filmes</h1>
 
-                <p>Bootcamp Spring React - DevSuperior</p>
+                <p>Diga o que você achou do seu filme favorito</p>
+
+                <div className="home-image-container">
+                    <MainImage />
+                </div>
             </div>
 
+            <div className="auth-form-container">
+                <Login />
+            </div>
 
-            <Link to="/githubsearch">
+            {/* <Link to="/githubsearch">
                 <button className="btn btn-primary btn-lg start-button">Começar</button>
-            </Link>
+            </Link> */}
         </div>
     );
 }
