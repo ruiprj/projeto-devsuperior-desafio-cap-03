@@ -1,0 +1,10 @@
+.login-card {
+    width: 479px;
+    height: 573px;
+    left: 0px;
+    top: 0px;
+
+    background: #6C6C6C;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
