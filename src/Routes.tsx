@@ -1,5 +1,6 @@
 import Navbar from 'components/Navbar';
 import Home from 'pages/Home';
+import MovieCatalog from 'pages/Private/MovieCatalog';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Routes = () => (
@@ -9,6 +10,10 @@ const Routes = () => (
     <Switch>
       <Route path="/" exact>
         <Home />
+      </Route>
+
+      <Route path="/movies">
+        <MovieCatalog />
       </Route>
       
       {/* <Route path="/githubsearch">
