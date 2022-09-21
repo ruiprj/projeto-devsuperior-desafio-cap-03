@@ -5,9 +5,15 @@ import './styles.css';
 const Navbar = () => {
   return (
     <nav className="navbar  main-nav">
-      <Link to="/" className="nav-logo-text">
-        <h4>MovieFlix</h4>
-      </Link>
+      <div className="container-fluid">
+        <Link to="/" className="nav-logo-text">
+          <h4>MovieFlix</h4>
+        </Link>
+
+        <button className="btn  btn-primary  btn-logout-custom" >
+            <h6>SAIR</h6>
+        </button>
+      </div>
     </nav>
   );
 };

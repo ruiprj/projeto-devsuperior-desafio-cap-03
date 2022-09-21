@@ -10,7 +10,7 @@ const Login = () => {
         <div className="mb-4">
           <input
             type="text"
-            className="form-control base-input"
+            className="form-control  base-input"
             placeholder="Email"
             name="username"
           />
@@ -19,13 +19,13 @@ const Login = () => {
         <div className="mb-2">
           <input
             type="password"
-            className="form-control base-input "
+            className="form-control  base-input input-password-custom"
             placeholder="Password"
             name="password"
           />
         </div>
 
-        <ButtonCustom text='FAZER LOGIN' />
+        <ButtonCustom width='100%' text='FAZER LOGIN' />
 
       </form>
     </div>

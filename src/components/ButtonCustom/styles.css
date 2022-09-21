@@ -1,3 +1,16 @@
+.btn-custom {
+    height: 50px;
+}
+
 .btn-custom h6 {
     margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+}
+
+@media (min-width: 576px) {
+    .btn-custom {
+        height: 65px;
+    }
 }

@@ -21,3 +21,14 @@ a:hover {
   text-decoration: none;
   color: unset;
 }
+
+.base-input {
+  background: #FEFEFE;
+  order: 1px solid #FEFEFE;
+  border-radius: 4px;
+  height: 45px;
+}
+
+.base-input::placeholder {
+  color: #9E9E9E;
+}
