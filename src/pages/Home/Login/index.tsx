@@ -1,9 +1,8 @@
-import ButtonCustom from 'components/ButtonCustom';
 import './styles.css';
 
 const Login = () => {
   return (
-    <div className="login-card">
+    <div className="base-card  login-card">
       <h1>LOGIN</h1>
 
       <form action="">
@@ -25,8 +24,15 @@ const Login = () => {
           />
         </div>
 
-        <ButtonCustom width='100%' text='FAZER LOGIN' />
+        <div className="btn-container">
+          <button
+            className="btn  btn-primary  btn-custom"
+          >
+            <h6>FAZER LOGIN</h6>
+          </button>
+        </div>
 
+        {/* <ButtonCustom width='100%' text='FAZER LOGIN' /> */}
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import Navbar from 'components/Navbar';
 import Home from 'pages/Home';
 import MovieCatalog from 'pages/Private/MovieCatalog';
+import MovieDetails from 'pages/Private/MovieDetails';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Routes = () => (
@@ -12,13 +13,13 @@ const Routes = () => (
         <Home />
       </Route>
 
-      <Route path="/movies">
+      <Route path="/movies" exact>
         <MovieCatalog />
       </Route>
-      
-      {/* <Route path="/githubsearch">
-        <GitHubSearch />
-      </Route> */}
+
+      <Route path="/movies/1">
+        <MovieDetails />
+      </Route>
     </Switch>
   </BrowserRouter>
 );
