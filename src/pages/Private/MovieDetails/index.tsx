@@ -3,7 +3,7 @@ import MainImage from 'assets/images/star-image.png';
 
 const MovieDetails = () => {
   return (
-    <div className="movie-details-container">
+    <div className="base-private-container  movie-details-container">
       <h2>Tela detalhes do filme id: 1</h2>
 
       <div className="base-card  movie-review-card">

@@ -1,7 +1,3 @@
-.movie-details-container {
-    padding: 30px;
-}
-
 .movie-details-container h2 {
     margin: 0;
     font-style: normal;
@@ -11,13 +7,17 @@
     letter-spacing: -0.015em;
     color: #FFFFFF;
 
-    /* width: 280px; */
     margin-bottom: 20px;
 }
 
 .movie-review-card {
     padding: 20px 10px;
     margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
 }
 
 .btn-custom {
@@ -47,6 +47,7 @@
     width: 12.95px;
     height: 15.34px;
     margin-right: 15px;
+    margin-left: 5px;
 }
 
 .reviewer-info-container p {
@@ -79,4 +80,25 @@
     margin-bottom: 15px;
 }
 
-/* TODO: fazer responsividade */
+@media (min-width: 576px) {
+    .btn-custom {
+        width: 334px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .movie-details-container h2 {
+        font-size: 48px;
+        line-height: 65px;
+
+        margin-bottom: 30px;
+    }
+
+    .movie-review-card {
+        margin-bottom: 30px;
+    }
+
+    .reviewer-info-container img {
+        margin-left: 20px;
+    }
+}

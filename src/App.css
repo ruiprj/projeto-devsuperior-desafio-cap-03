@@ -39,3 +39,29 @@ a:hover {
 .base-input::placeholder {
   color: #9e9e9e;
 }
+
+
+.base-private-container {
+  padding: 30px;
+}
+
+@media (min-width: 576px) {
+  .base-private-container {
+      padding-left: 35px;
+      padding-right: 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  .base-private-container {
+      padding-left: 40px;
+      padding-right: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .base-private-container {
+      padding-left: 60px;
+      padding-right: 60px;
+  }
+}
