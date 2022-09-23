@@ -1,5 +1,5 @@
-import './styles.css';
 import MainImage from 'assets/images/star-image.png';
+import './styles.css';
 
 const MovieDetails = () => {
   return (

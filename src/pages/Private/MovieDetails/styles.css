@@ -81,6 +81,10 @@
 }
 
 @media (min-width: 576px) {
+    .movie-review-card {
+        padding: 25px 20px;
+    }
+
     .btn-custom {
         width: 334px;
     }
