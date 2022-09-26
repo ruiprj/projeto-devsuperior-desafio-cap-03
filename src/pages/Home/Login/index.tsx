@@ -12,7 +12,7 @@ type FormData = {
 const Login = () => {
   const [hasError, setHasError] = useState(false);
 
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = (formData: FormData) => {
     requestBackendLogin(formData)
@@ -40,25 +40,31 @@ const Login = () => {
       )}
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-4">
+        <div className="input-login-custom-container">
           <input
-            {...register("username")}
+            {...register("username", {
+              required: 'Campo obrigatório'
+            })}
             type="text"
             className="form-control  base-input"
             placeholder="Email"
             name="username"
           />
         </div>
+        <div className="invalid-feedback  d-block">{ errors.username?.message }</div>
 
-        <div className="mb-2">
+        <div className="input-password-custom-container">
           <input
-            {...register("password")}
+            {...register("password", {
+              required: 'Campo obrigatório'
+            })}
             type="password"
-            className="form-control  base-input input-password-custom"
+            className="form-control  base-input"
             placeholder="Password"
             name="password"
           />
         </div>
+        <div className="invalid-feedback  d-block">{ errors.password?.message }</div>
 
         <div className="btn-container">
           <button

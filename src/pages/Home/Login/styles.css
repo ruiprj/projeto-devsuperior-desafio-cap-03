@@ -1,6 +1,5 @@
 .login-card {
     width: 298px;
-    /* height: 464px; */
     left: 0px;
     top: 0px;
     padding: 0 20px 100px 20px;
@@ -20,8 +19,12 @@
     margin-bottom: 50px;
 }
 
-.input-password-custom {
-    margin-bottom: 55px;
+.input-password-custom-container {
+    margin-top: 20px;
+}
+
+.btn-container {
+    margin-top: 55px;
 }
 
 .btn-custom {
@@ -48,8 +51,12 @@
         margin-bottom: 40px;
     }
 
-    .input-password-custom {
-        margin-bottom: 75px;
+    .input-password-custom-container {
+        margin-top: 30px;
+    }
+
+    .btn-container {
+        margin-top: 75px;
     }
 
     .btn-custom {
