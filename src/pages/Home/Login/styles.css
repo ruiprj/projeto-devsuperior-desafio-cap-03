@@ -39,6 +39,10 @@
     padding: 0;
 }
 
+.invalid-feedback-custom {
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.600);
+}
+
 @media (min-width: 576px) {
     .login-card {
         width: 479px;

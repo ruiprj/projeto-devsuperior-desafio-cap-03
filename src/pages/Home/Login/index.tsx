@@ -43,7 +43,11 @@ const Login = () => {
         <div className="input-login-custom-container">
           <input
             {...register("username", {
-              required: 'Campo obrigatório'
+              required: 'Campo obrigatório',
+              pattern: {
+                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                message: 'E-mail inválido'
+              }
             })}
             type="text"
             className="form-control  base-input"
@@ -51,7 +55,9 @@ const Login = () => {
             name="username"
           />
         </div>
-        <div className="invalid-feedback  d-block">{ errors.username?.message }</div>
+        <div className="invalid-feedback  d-block  invalid-feedback-custom">
+          { errors.username?.message }
+        </div>
 
         <div className="input-password-custom-container">
           <input
@@ -64,7 +70,9 @@ const Login = () => {
             name="password"
           />
         </div>
-        <div className="invalid-feedback  d-block">{ errors.password?.message }</div>
+        <div className="invalid-feedback  d-block  invalid-feedback-custom">
+          { errors.password?.message }
+        </div>
 
         <div className="btn-container">
           <button
