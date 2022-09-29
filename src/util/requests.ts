@@ -40,7 +40,7 @@ export const requestBackendLogin = (loginData: LoginData) => {
 }
 
 export const requestBackend = (config: AxiosRequestConfig) => {
-    return axios(config);
+    return axios({...config, baseURL: BASE_URL});
 }
 
 export const savaAuthData = (obj: LoginResponse) => {

@@ -1,8 +1,8 @@
 import MainImage from 'assets/images/star-image.png';
 import { AxiosRequestConfig } from 'axios';
-import { useState, useEffect } from 'react';
-import { SpringPage } from 'types/vendor/spring';
+import { useEffect, useState } from 'react';
 import { Review } from 'types/review';
+import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'util/requests';
 
 import './styles.css';
@@ -13,11 +13,12 @@ const MovieDetails = () => {
   useEffect(() => {
     const params: AxiosRequestConfig = {
       url: '/movies/1/reviews',
+      method: 'GET',
       withCredentials: true,
-      params: {
-        page: 0,
-        size: 10
-      }
+      // params: {
+      //   page: 0,
+      //   size: 10
+      // }
     };
 
     requestBackend(params)
