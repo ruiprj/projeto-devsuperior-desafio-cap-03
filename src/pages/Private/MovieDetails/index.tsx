@@ -41,9 +41,9 @@ const MovieDetails = () => {
     <div className="base-private-container  movie-details-container">
       <h2>Tela detalhes do filme id: {movieId}</h2>
 
-      <ReviewForm />
+      <ReviewForm movieId={ movieId } />
 
-      <ReviewList reviews={reviews} />
+      <ReviewList reviews={ reviews } />
 
     </div>
   );
