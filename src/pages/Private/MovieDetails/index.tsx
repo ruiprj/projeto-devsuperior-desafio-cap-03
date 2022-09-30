@@ -39,7 +39,7 @@ const MovieDetails = () => {
 
   return (
     <div className="base-private-container  movie-details-container">
-      <h2>Tela detalhes do filme id: {movieId}</h2>
+      <h2>Tela detalhes do filme id: { movieId }</h2>
 
       <ReviewForm movieId={ movieId } />
 

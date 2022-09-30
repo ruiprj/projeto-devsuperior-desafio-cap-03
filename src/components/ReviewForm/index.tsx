@@ -1,4 +1,8 @@
+import { AxiosRequestConfig } from 'axios';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { requestBackend } from 'util/requests';
 
 import './styles.css';
 
@@ -8,32 +12,61 @@ type Props = {
 
 type FormData = {
   movieId: string;
-  review: string;
+  text: string;
 }
 
 const ReviewForm = ({ movieId }: Props) => {
+  const [hasSuccess, setHasSuccess] = useState(false);
+
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
   const onSubmit = (formData: FormData) => {
     formData.movieId = movieId;
 
-    console.log(formData);
+    const params: AxiosRequestConfig = {
+      url: '/reviews',
+      method: 'POST',
+      withCredentials: true,
+      data: {
+        ...formData
+      }
+    };
+
+    requestBackend(params)
+      .then((response) => {
+        console.log(response);
+
+        setHasSuccess(true);
+        
+      })
+      .catch((errors) => {
+        console.log(errors);
+      });
     
   }
 
   return (
     <div className="base-card  movie-review-card">
+      { hasSuccess && (
+        <div className="alert  alert-success">
+          Review salvo com sucesso!
+        </div>
+      )}
+
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="mb-4">
+        <div className="input-review-custom-container">
           <input
-            {...register("review", {
+            {...register("text", {
               required: 'Campo obrigatório'
             })}
             type="text"
-            className="form-control  base-input"
+            className={`form-control  base-input  ${errors.text ? 'is-invalid' : ''}`}
             placeholder="Deixe sua avaliação aqui"
-            name="review"
+            name="text"
           />
+        </div>
+        <div className="invalid-feedback  d-block  invalid-feedback-custom">
+          { errors.text?.message }
         </div>
 
         <div className="btn-review-container">
