@@ -21,11 +21,11 @@ const MovieDetails = () => {
     const params: AxiosRequestConfig = {
       url: `/movies/${movieId}/reviews`,
       method: 'GET',
-      withCredentials: true,
-      params: {
-        page: 0,
-        size: 10
-      }
+      withCredentials: true
+      // params: {
+      //   page: 0,
+      //   size: 10
+      // }
     };
 
     requestBackend(params)

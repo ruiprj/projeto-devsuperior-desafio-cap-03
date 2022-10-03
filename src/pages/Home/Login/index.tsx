@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 import { getAuthData, requestBackendLogin, savaAuthData } from 'util/requests';
 
 import './styles.css';
@@ -14,6 +15,8 @@ const Login = () => {
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
+  const history = useHistory();
+
   const onSubmit = (formData: FormData) => {
     requestBackendLogin(formData)
       .then(response => {
@@ -24,6 +27,8 @@ const Login = () => {
         setHasError(false);
 
         console.log('SUCESSO', response);
+
+        history.push('/movies');
       })
       .catch(error => {
         setHasError(true);
