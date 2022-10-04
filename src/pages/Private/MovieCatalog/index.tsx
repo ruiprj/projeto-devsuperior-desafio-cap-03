@@ -1,4 +1,3 @@
-import { isAuthenticated } from 'util/requests';
 
 import './styles.css';
 

@@ -11,36 +11,39 @@ type Props = {
 }
 
 type FormData = {
-  movieId: string;
+  movieId: number;
   text: string;
 }
 
 const ReviewForm = ({ movieId }: Props) => {
   const [hasSuccess, setHasSuccess] = useState(false);
 
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormData>();
 
   const onSubmit = (formData: FormData) => {
-    formData.movieId = movieId;
+    formData.movieId = parseInt(movieId);
 
     const params: AxiosRequestConfig = {
       url: '/reviews',
       method: 'POST',
-      withCredentials: true,
       data: {
         ...formData
-      }
+      },
+      withCredentials: true
     };
 
     requestBackend(params)
       .then((response) => {
-        console.log(response);
+        setValue('text', '');
 
-        setHasSuccess(true);
+        console.log('SUCESSO AO SALVAR', response);
         
+        setHasSuccess(true);
       })
       .catch((errors) => {
-        console.log(errors);
+        console.log('ERRO AO SALVAR', errors);
+
+        setHasSuccess(false);
       });
     
   }
