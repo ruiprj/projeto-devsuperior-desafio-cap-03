@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { AuthContext } from 'AuthContext';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { getAuthData, requestBackendLogin, savaAuthData } from 'util/requests';
+import { getTokenData, requestBackendLogin, savaAuthData } from 'util/requests';
 
 import './styles.css';
 
@@ -11,6 +12,8 @@ type FormData = {
 }
 
 const Login = () => {
+  const { setAuthContextData } = useContext(AuthContext);
+
   const [hasError, setHasError] = useState(false);
 
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
@@ -21,12 +24,13 @@ const Login = () => {
     requestBackendLogin(formData)
       .then(response => {
         savaAuthData(response.data);
-        const token = getAuthData().access_token;
-        console.log('TOKEN GERADO: ' +  token);
 
         setHasError(false);
 
-        console.log('SUCESSO', response);
+        setAuthContextData({
+          authenticated: true,
+          tokenData: getTokenData()
+        });
 
         history.push('/movies');
       })
