@@ -12,6 +12,10 @@
   margin: 0;
 }
 
+.nav-username {
+  display: none;
+}
+
 .btn-logout-custom {
   border: solid 1px #000000;
   border-radius: 10px;
@@ -34,6 +38,12 @@
   .main-nav {
     padding-left: 25px;
     padding-right: 25px;
+  }
+
+  .nav-username {
+    display: unset;
+    font-size: 14px;
+    margin-right: 10px;
   }
 }
 
