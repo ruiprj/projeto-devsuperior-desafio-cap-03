@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="nav-logout">
           { authContextData.authenticated ? (
             <>
-              <span className="nav-username" nav-username>{ authContextData.tokenData?.user_name }</span>
+              <span className="nav-username">{ authContextData.tokenData?.user_name }</span>
 
               <button className="btn  btn-primary  btn-logout-custom" onClick={ handleLogoutClick } >
                   <h6>SAIR</h6>
