@@ -2,7 +2,9 @@ import { AuthContext } from 'AuthContext';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
-import { getTokenData, requestBackendLogin, savaAuthData } from 'util/requests';
+import { getTokenData } from 'util/auth';
+import { requestBackendLogin } from 'util/requests';
+import { savaAuthData } from 'util/storage';
 
 import './styles.css';
 

@@ -4,7 +4,8 @@ import ReviewList from 'components/ReviewList';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Review } from 'types/review';
-import { hasAnyRoles, requestBackend } from 'util/requests';
+import { hasAnyRoles } from 'util/auth';
+import { requestBackend } from 'util/requests';
 
 import './styles.css';
 
