@@ -1,6 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Review } from 'types/review';
 
 import { requestBackend } from 'util/requests';
 
@@ -8,6 +9,7 @@ import './styles.css';
 
 type Props = {
   movieId: string;
+  onInsertReview: (review: Review) => void;
 }
 
 type FormData = {
@@ -15,7 +17,7 @@ type FormData = {
   text: string;
 }
 
-const ReviewForm = ({ movieId }: Props) => {
+const ReviewForm = ({ movieId, onInsertReview }: Props) => {
   const [hasSuccess, setHasSuccess] = useState(false);
 
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<FormData>();
@@ -35,6 +37,8 @@ const ReviewForm = ({ movieId }: Props) => {
     requestBackend(params)
       .then((response) => {
         setValue('text', '');
+
+        onInsertReview(response.data);
 
         console.log('SUCESSO AO SALVAR', response);
         
