@@ -1,7 +1,7 @@
 import { AuthContext } from 'AuthContext';
 import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { getTokenData, requestBackendLogin, savaAuthData } from 'util/requests';
 
 import './styles.css';
@@ -11,14 +11,7 @@ type FormData = {
   password: string;
 }
 
-type LocationState = {
-  from: string;
-}
-
 const Login = () => {
-  const location = useLocation<LocationState>();
-  const { from } = location.state || { from: { pathname: '/' } };
-
   const { setAuthContextData } = useContext(AuthContext);
 
   const [hasError, setHasError] = useState(false);
@@ -39,7 +32,7 @@ const Login = () => {
           tokenData: getTokenData()
         });
 
-        history.replace(from);
+        history.push('/movies');
       })
       .catch(error => {
         setHasError(true);
